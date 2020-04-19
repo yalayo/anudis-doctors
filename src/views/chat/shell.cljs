@@ -3,12 +3,14 @@
             [views.chat.search :refer [search-component]]
             [views.chat.conversation-list :refer [conversation-list-component]]
              [views.chat.new-conversation :refer [new-conversation-component]]
-             [views.chat.title :refer [title-component]]))
+             [views.chat.title :refer [title-component]]
+             [views.chat.message-list :refer [message-list-component]]))
 
 (defn shell-component []
   [:div {:id "chat-container"}
    [search-component]
    [conversation-list-component]
    [new-conversation-component]
-   [title-component]])
+   [title-component]
+   [message-list-component]])
 
