@@ -3,4 +3,5 @@
             [views.chat.search-test]
             [views.chat.conversation-list-test]
             [views.chat.new-conversation-test]
-            [views.chat.title-test]))
+            [views.chat.title-test]
+            [views.chat.message-list-test]))
