@@ -7,18 +7,18 @@
 
 (def app (App))
 
-(def stack (Stack app "x-web-client"))
+(def stack (Stack app "anudis-doctors-web"))
 
 (def bucket
   (Bucket stack
-          "x-web-bucket"
+          "anudis-doctors-web-bucket"
           {:publicReadAccess true
            :websiteIndexDocument "index.html"
            }))
 
 (def deployment
   (BucketDeployment stack
-                    "x-deployment"
+                    "anudis-doctors-deployment"
                     {:sources [(Source/asset "dist/")]
                      :destinationBucket bucket
                      }))
