@@ -1,7 +1,9 @@
 (ns ^:figwheel-hooks webapp.core
   (:require
    [goog.dom :as gdom]
-   [reagent.core :as reagent :refer [atom]]))
+   [reagent.core :as reagent :refer [atom]]
+   [reagent.dom :as rdom]
+   [views.chat.shell :refer [shell-component]]))
 
 ;; define your app data so that it doesn't get over-written on reload
 (defonce app-state (atom {:text "Let's do this!"}))
@@ -11,10 +13,10 @@
 
 (defn main-component []
   [:div
-   [:h1 (:text @app-state)]])
+   [shell-component]])
 
 (defn mount [el]
-  (reagent/render-component [main-component] el))
+  (rdom/render [main-component] el))
 
 (defn mount-app-element []
   (when-let [el (get-app-element)]
